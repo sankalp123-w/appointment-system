@@ -3,7 +3,7 @@ const Doctors = require('../../../models/Doctor');
 const findNearestDoctors = async (req, res, next) => {
 
     try {
-        const doctors = await Doctors.find({});
+        const doctors = await Doctors.find({}).populate('councilHour');
         console.log("res", doctors);
 
         res.send(doctors)
